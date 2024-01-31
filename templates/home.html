@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+</head>
+<body>
+<h1>Blog Posts</h1>
+<form action="/search">
+<input type="text" name="query" placeholder="Search">
+<input type="submit" value="Search">
+</form>
+{% for post in posts %}
+<div>
+<h2>{{ post.title }}</h2>
+<p>{{ post.content }}</p>
+<a href="/edit_post/{{ post.id }}">Edit</a>
+<a href="/delete_post/{{ post.id }}">Delete</a>
+</div>
+{% endfor %}
+<a href="/new_post">New Post</a>
+</body>
+</html>
+
+
